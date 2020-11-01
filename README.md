@@ -1,6 +1,6 @@
 # Description
 
-This is a repository of the code for the *** An efficient projection neural network for $\ell_1$-regularized logistic regression *** paper.
+This is a repository of the code for the ***An efficient projection neural network for $\ell_1$-regularized logistic regression*** paper.
 
 ## Getting Started
 
@@ -46,4 +46,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Inspiration, code snippets, etc.
 * [LIBSVM Datasets](https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html)
-* Results of other method obtains from [L1General.zip](https://www.cs.ubc.ca/~schmidtm/Software/L1General.html) package by Mark Schmidt
+* Results of other methods obtained from [L1General.zip](https://www.cs.ubc.ca/~schmidtm/Software/L1General.html), *a package by Mark Schmidt*
