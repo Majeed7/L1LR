@@ -1,10 +1,10 @@
-import scipy.io as sio
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.io as sio
 from sklearn.datasets import load_svmlight_file
-from sklearn.metrics import roc_curve, auc
-import matplotlib.pyplot as plt
-import matplotlib as mpl
+from sklearn.metrics import auc, roc_curve
+
 plt.rcParams['figure.dpi'] = 300
 plt.rcParams["font.family"] = "Sans Serif"
 plt.rcParams['font.size'] = 24
@@ -59,25 +59,6 @@ if __name__ == "__main__":
     score2  = sio.loadmat("./results/liver-disorders_ours.mat")["score_our"]
     score_liver = np.vstack([score_liver, score1, score2])
     print(score_liver.shape)
-    
-    ##a1a
-    # _, ytrue = load_svmlight_file('./datasets/a9a.t')
-    # ytrue[ytrue==-1] = 0
-    # plt.figure(figsize=(15,7))
-    # lw = 1.5
-    # for i, name in enumerate(method_names):
-    #     fpr, tpr, _ = roc_curve(ytrue, score_a9a[i])
-    #     roc_auc = auc(fpr, tpr)
-    #     plt.plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.4f})')
-    # plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-    # plt.xlim([0.0, 1.0])
-    # plt.ylim([0.0, 1.05])
-    # plt.xlabel('False Positive Rate')
-    # plt.ylabel('True Positive Rate')
-    # plt.title('a9a dataset')
-    # plt.legend(loc="lower right", prop={'size': 8})
-    # plt.savefig(f'./test.png', format='png', bbox_inches='tight')
-    # plt.show()
 
     
     fig, ax = plt.subplots(2, 3,sharex=True,sharey=True,figsize=(24, 16))
