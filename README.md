@@ -16,7 +16,7 @@ This is a repository of the code for the ***An efficient projection neural netwo
 * Download repository
 * Install Dependencies
 * Datasets must be in Libsvm format, download and put them in the [datasets](./datasets) folder in the root of the project. Download link available in the **Acknowledgments**.
-
+    
 ### Executing program
 
 * Run each file in form of *run_(dataset_name).py* to obtain corresponding results of the proposed method and sklearn LogisticRegression model
