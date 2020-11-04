@@ -2,6 +2,7 @@ import timeit
 
 import numpy as np
 import torch
+from sklearn import preprocessing
 from sklearn.datasets import load_svmlight_file
 from sklearn.linear_model import LogisticRegression
 
@@ -24,8 +25,8 @@ if __name__ == "__main__":
     out_dim = 1  # output dimension
 
     # preprocessing
-    # scaler = preprocessing.StandardScaler()
-    # train_set_x = scaler.fit_transform(train_set_x)
+    scaler = preprocessing.StandardScaler()
+    train_set_x = scaler.fit_transform(train_set_x)
 
     # np -> tensor
     x = torch.from_numpy(train_set_x).float().to(device)
@@ -34,9 +35,9 @@ if __name__ == "__main__":
     # Construct our model by instantiating the class defined above.
     model = LogisticRegressionNet(in_dim, out_dim, y,lam=1.0,device=device)
 
-    learning_rate = 1e-3
+    learning_rate = 3e-1
     tolerance = 1e-6
-    max_itr = 500
+    max_itr = 100
     # optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.0)
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, betas=(0.5, 0.999))
     loss_prev = float('inf')
@@ -61,8 +62,8 @@ if __name__ == "__main__":
     # testing
     test_set_x, test_set_y = load_svmlight_file(test_path)
     test_set_x = test_set_x.todense()
-    # scaler = preprocessing.StandardScaler()
-    # test_set_x = scaler.fit_transform(test_set_x)
+    scaler = preprocessing.StandardScaler()
+    test_set_x = scaler.fit_transform(test_set_x)
     test_set_y[test_set_y==-1] = 0
     x_test = torch.from_numpy(test_set_x).float().to(device)
     y_test = torch.from_numpy(test_set_y).float().to(device).squeeze_()
