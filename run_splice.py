@@ -1,6 +1,7 @@
 import timeit
 
 import numpy as np
+import scipy.io as sio
 import torch
 from sklearn import preprocessing
 from sklearn.datasets import load_svmlight_file
@@ -9,8 +10,9 @@ from sklearn.linear_model import LogisticRegression
 from model_LR_NN_PR import LogisticRegressionNet
 
 if __name__ == "__main__":
-    train_path = '.\datasets\\splice'
-    test_path = '.\datasets\\splice.t'
+    dataset_name = "splice"
+    train_path = f'./datasets//{dataset_name}'
+    test_path = f'./datasets//{dataset_name}.t'
 
     train_set_x, train_set_y = load_svmlight_file(train_path)
     train_set_x = train_set_x.todense()
@@ -83,3 +85,8 @@ if __name__ == "__main__":
     print('Time (sklearn LR): ', time_lr_sklearn)  
     y_pred = logreg.predict(test_set_x)
     print ("accurency (sklearn LR): ", 100 - np.mean(abs(y_pred - test_set_y))*100)
+
+    # save results for draw ROC
+    y_prob = logreg.predict_proba(test_set_x)
+    y_score = model.predict_proba(x_test).detach().numpy()
+    sio.savemat(f"./results/{dataset_name}_ours.mat", {'score_our': y_score, 'score_sk':y_prob[:, 1]})

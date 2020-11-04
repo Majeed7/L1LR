@@ -21,7 +21,7 @@ if __name__ == "__main__":
     score_ijcnn1  = 1.0 - sio.loadmat("./results/ijcnn1.mat")["score"]
     score_liver  = 1.0 - sio.loadmat("./results/liver-disorders.mat")["score"]
     score_madelon  = 1.0 - sio.loadmat("./results/madelon.mat")["score"]
-
+    
     print(score_a1a.shape)
     print(score_a9a.shape)
     print(score_splice.shape)

@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from model_LR_NN_PR import LogisticRegressionNet
 
 if __name__ == "__main__":
-    train_path = '.\datasets\\madelon'
+    train_path = './datasets//madelon'
 
     train_set_x, train_set_y = load_svmlight_file(train_path)
     train_set_x = train_set_x.todense()

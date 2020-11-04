@@ -40,11 +40,14 @@ class LogisticRegressionNet(nn.Module):
         self.y = labels
     
     def forward(self, x):
-        # out = self.l1(x)
-        # out = F.sigmoid(out)
         return MyLoss.apply(x, self.weight, self.bias, self.y, self.lam)
     
     def predict(self, x):
         w = self.weight
         a = x.mv(w) + self.bias
         return (torch.sigmoid(a) > 0.5).float()
+
+    def predict_proba(self, x):
+        w = self.weight
+        a = x.mv(w) + self.bias
+        return torch.sigmoid(a)

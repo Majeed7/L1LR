@@ -8,7 +8,7 @@ from model_LR_NN_PR import LogisticRegressionNet
 
 if __name__ == "__main__":
     dataset_name = "ijcnn1"
-    train_path = f'.\datasets\\{dataset_name}'
+    train_path = f'./datasets//{dataset_name}'
 
     train_set_x, train_set_y = load_svmlight_file(train_path)
     train_set_x = train_set_x.todense()
