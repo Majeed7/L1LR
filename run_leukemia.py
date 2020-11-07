@@ -26,9 +26,9 @@ if __name__ == "__main__":
     in_dim = train_set_x.shape[1]  # input dimension
     out_dim = 1  # output dimension
     
-    learning_rate = 1e-2
-    tolerance = 1e-10
-    max_itr = 500
+    learning_rate = 1.5
+    tolerance = 1e-4
+    max_itr = 100
     lam = 1.0
 
     # preprocessing

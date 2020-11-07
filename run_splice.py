@@ -37,11 +37,11 @@ if __name__ == "__main__":
     # Construct our model by instantiating the class defined above.
     model = LogisticRegressionNet(in_dim, out_dim, y,lam=1.0,device=device)
 
-    learning_rate = 1e-1
+    learning_rate = 3e-2
     tolerance = 1e-6
-    max_itr = 50
+    max_itr = 100
     # optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.0)
-    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, betas=(0.5, 0.999))
+    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate, betas=(0.9, 0.999))
     loss_prev = float('inf')
     start = timeit.default_timer()
     for t in range(max_itr+1):
