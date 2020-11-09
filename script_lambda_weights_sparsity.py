@@ -7,7 +7,7 @@ from sklearn.datasets import load_svmlight_file
 from model_LR_NN_PR import LogisticRegressionNet
 
 if __name__ == "__main__":
-    dataset_name = "ijcnn1"
+    dataset_name = "splice"
     train_path = f'./datasets//{dataset_name}'
 
     train_set_x, train_set_y = load_svmlight_file(train_path)
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     x = torch.from_numpy(train_set_x).float().to(device)
     y = torch.from_numpy(train_set_y).float().to(device)
     
-    lam_list = [10**i for i in range(0, 7, 1)]
+    lam_list = [10**i for i in range(0, 6, 1)]
     lam_list.extend([5, 20])
     lam_list.sort()
     weights = np.zeros((len(lam_list), in_dim))
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     plt.rcParams.update({'font.size': 12})
     plt.rcParams['figure.dpi'] = 300
     # plt.figure(figsize=(15,8))
-    plt.yticks(np.arange(len(lam_list)), lam_list,fontsize=8)
+    plt.yticks(np.arange(len(lam_list)), lam_list,fontsize=12)
     plt.ylabel(r"$\lambda$", fontsize=22)
     plt.xlabel("Weights vector", fontsize=22)
     plt.xticks([])
