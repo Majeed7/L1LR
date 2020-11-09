@@ -89,10 +89,10 @@ if __name__ == "__main__":
             continue
         fpr, tpr, _ = roc_curve(ytrue, score_leu[k])
         roc_auc = auc(fpr, tpr)
-        ax[0,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[0,0].set_title('leukemia')
-    ax[0,0].legend(loc="lower right", prop={'size': 16})
-    ax[0,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+        ax[3,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
+    ax[3,0].set_title('leukemia')
+    ax[3,0].legend(loc="lower right", prop={'size': 16})
+    ax[3,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 
 
     _, ytrue = load_svmlight_file('./datasets/liver-disorders.t')
@@ -102,10 +102,10 @@ if __name__ == "__main__":
             continue
         fpr, tpr, _ = roc_curve(ytrue, score_liver[k])
         roc_auc = auc(fpr, tpr)
-        ax[0,1].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[0,1].set_title('liver-disorders')
-    ax[0,1].legend(loc="lower right", prop={'size': 16})
-    ax[0,1].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+        ax[1,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
+    ax[1,0].set_title('liver-disorders')
+    ax[1,0].legend(loc="lower right", prop={'size': 16})
+    ax[1,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 
 
     _, ytrue = load_svmlight_file('./datasets/madelon.t')
@@ -115,10 +115,10 @@ if __name__ == "__main__":
             continue
         fpr, tpr, _ = roc_curve(ytrue, score_madelon[k])
         roc_auc = auc(fpr, tpr)
-        ax[1,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[1,0].set_title('madelon')
-    ax[1,0].legend(loc="lower right", prop={'size': 16})
-    ax[1,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+        ax[0,1].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
+    ax[0,1].set_title('madelon')
+    ax[0,1].legend(loc="lower right", prop={'size': 16})
+    ax[0,1].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
     
     
     _, ytrue = load_svmlight_file('./datasets/splice.t')
@@ -128,10 +128,10 @@ if __name__ == "__main__":
             continue
         fpr, tpr, _ = roc_curve(ytrue, score_splice[k])
         roc_auc = auc(fpr, tpr)
-        ax[1,1].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[1,1].set_title('splice')
-    ax[1,1].legend(loc="lower right", prop={'size': 16})
-    ax[1,1].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+        ax[0,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
+    ax[0,0].set_title('splice')
+    ax[0,0].legend(loc="lower right", prop={'size': 16})
+    ax[0,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 
     _, ytrue = load_svmlight_file('./datasets/ijcnn1.t')
     ytrue[ytrue==-1] = 0
@@ -140,10 +140,10 @@ if __name__ == "__main__":
             continue
         fpr, tpr, _ = roc_curve(ytrue, score_ijcnn1[k])
         roc_auc = auc(fpr, tpr)
-        ax[2,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[2,0].set_title('ijcnn1')
-    ax[2,0].legend(loc="lower right", prop={'size': 16})
-    ax[2,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+        ax[1,1].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
+    ax[1,1].set_title('ijcnn1')
+    ax[1,1].legend(loc="lower right", prop={'size': 16})
+    ax[1,1].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 
 
     _, ytrue = load_svmlight_file('./datasets/a1a.t')
@@ -153,10 +153,10 @@ if __name__ == "__main__":
             continue
         fpr, tpr, _ = roc_curve(ytrue, score_a1a[k])
         roc_auc = auc(fpr, tpr)
-        ax[2,1].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[2,1].set_title('a1a')
-    ax[2,1].legend(loc="lower right", prop={'size': 16})
-    ax[2,1].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+        ax[2,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
+    ax[2,0].set_title('a1a')
+    ax[2,0].legend(loc="lower right", prop={'size': 16})
+    ax[2,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 
 
     _, ytrue = load_svmlight_file('./datasets/a9a.t')
@@ -167,10 +167,10 @@ if __name__ == "__main__":
             continue
         fpr, tpr, _ = roc_curve(ytrue, score_a9a[k])
         roc_auc = auc(fpr, tpr)
-        ax[3,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[3,0].set_title('a9a')
-    ax[3,0].legend(loc="lower right", prop={'size': 16})
-    ax[3,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+        ax[2,1].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
+    ax[2,1].set_title('a9a')
+    ax[2,1].legend(loc="lower right", prop={'size': 16})
+    ax[2,1].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 
 
     _, ytrue = load_svmlight_file('./datasets/gisette_scale.t')
