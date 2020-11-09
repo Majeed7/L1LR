@@ -27,7 +27,7 @@ if __name__ == "__main__":
     out_dim = 1  # output dimension
     
     learning_rate = 1.5
-    tolerance = 1e-4
+    tolerance = 1e-7
     max_itr = 100
     lam = 1.0
 

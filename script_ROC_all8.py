@@ -80,30 +80,7 @@ if __name__ == "__main__":
     fig.tight_layout()
     lw=3.0
     line_styles = ['-.','--','-',':']
-    _, ytrue = load_svmlight_file('./datasets/a9a.t')
-    ytrue[ytrue==-1] = 0
 
-    for k, name in enumerate(method_names):
-        if name not in selected_methods:
-            continue
-        fpr, tpr, _ = roc_curve(ytrue, score_a9a[k])
-        roc_auc = auc(fpr, tpr)
-        ax[0,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[0,0].set_title('a9a')
-    ax[0,0].legend(loc="lower right", prop={'size': 16})
-    ax[0,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-
-    _, ytrue = load_svmlight_file('./datasets/a1a.t')
-    ytrue[ytrue==-1] = 0
-    for k, name in enumerate(method_names):
-        if name not in selected_methods:
-            continue
-        fpr, tpr, _ = roc_curve(ytrue, score_a1a[k])
-        roc_auc = auc(fpr, tpr)
-        ax[0,1].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[0,1].set_title('a1a')
-    ax[0,1].legend(loc="lower right", prop={'size': 16})
-    ax[0,1].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 
     _, ytrue = load_svmlight_file('./datasets/leu.t')
     ytrue[ytrue==-1] = 0
@@ -112,11 +89,38 @@ if __name__ == "__main__":
             continue
         fpr, tpr, _ = roc_curve(ytrue, score_leu[k])
         roc_auc = auc(fpr, tpr)
+        ax[0,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
+    ax[0,0].set_title('leukemia')
+    ax[0,0].legend(loc="lower right", prop={'size': 16})
+    ax[0,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+
+
+    _, ytrue = load_svmlight_file('./datasets/liver-disorders.t')
+    ytrue[ytrue==-1] = 0
+    for k, name in enumerate(method_names):
+        if name not in selected_methods:
+            continue
+        fpr, tpr, _ = roc_curve(ytrue, score_liver[k])
+        roc_auc = auc(fpr, tpr)
+        ax[0,1].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
+    ax[0,1].set_title('liver-disorders')
+    ax[0,1].legend(loc="lower right", prop={'size': 16})
+    ax[0,1].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+
+
+    _, ytrue = load_svmlight_file('./datasets/madelon.t')
+    ytrue[ytrue==-1] = 0
+    for k, name in enumerate(method_names):
+        if name not in selected_methods:
+            continue
+        fpr, tpr, _ = roc_curve(ytrue, score_madelon[k])
+        roc_auc = auc(fpr, tpr)
         ax[1,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[1,0].set_title('leukemia')
+    ax[1,0].set_title('madelon')
     ax[1,0].legend(loc="lower right", prop={'size': 16})
     ax[1,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-
+    
+    
     _, ytrue = load_svmlight_file('./datasets/splice.t')
     ytrue[ytrue==-1] = 0
     for k, name in enumerate(method_names):
@@ -141,18 +145,34 @@ if __name__ == "__main__":
     ax[2,0].legend(loc="lower right", prop={'size': 16})
     ax[2,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 
-    _, ytrue = load_svmlight_file('./datasets/madelon.t')
+
+    _, ytrue = load_svmlight_file('./datasets/a1a.t')
     ytrue[ytrue==-1] = 0
     for k, name in enumerate(method_names):
         if name not in selected_methods:
             continue
-        fpr, tpr, _ = roc_curve(ytrue, score_madelon[k])
+        fpr, tpr, _ = roc_curve(ytrue, score_a1a[k])
         roc_auc = auc(fpr, tpr)
         ax[2,1].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[2,1].set_title('madelon')
+    ax[2,1].set_title('a1a')
     ax[2,1].legend(loc="lower right", prop={'size': 16})
     ax[2,1].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-    
+
+
+    _, ytrue = load_svmlight_file('./datasets/a9a.t')
+    ytrue[ytrue==-1] = 0
+
+    for k, name in enumerate(method_names):
+        if name not in selected_methods:
+            continue
+        fpr, tpr, _ = roc_curve(ytrue, score_a9a[k])
+        roc_auc = auc(fpr, tpr)
+        ax[3,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
+    ax[3,0].set_title('a9a')
+    ax[3,0].legend(loc="lower right", prop={'size': 16})
+    ax[3,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+
+
     _, ytrue = load_svmlight_file('./datasets/gisette_scale.t')
     ytrue[ytrue==-1] = 0
     for k, name in enumerate(method_names):
@@ -160,20 +180,8 @@ if __name__ == "__main__":
             continue
         fpr, tpr, _ = roc_curve(ytrue, score_gisette[k])
         roc_auc = auc(fpr, tpr)
-        ax[3,0].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[3,0].set_title('gisette')
-    ax[3,0].legend(loc="lower right", prop={'size': 16})
-    ax[3,0].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
-
-    _, ytrue = load_svmlight_file('./datasets/liver-disorders.t')
-    ytrue[ytrue==-1] = 0
-    for k, name in enumerate(method_names):
-        if name not in selected_methods:
-            continue
-        fpr, tpr, _ = roc_curve(ytrue, score_liver[k])
-        roc_auc = auc(fpr, tpr)
         ax[3,1].plot(fpr, tpr, lw=lw, label=f'{name} (area = {roc_auc:.3f})', linestyle=line_styles[k % len(line_styles)])
-    ax[3,1].set_title('liver-disorders')
+    ax[3,1].set_title('gisette')
     ax[3,1].legend(loc="lower right", prop={'size': 16})
     ax[3,1].plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
 
