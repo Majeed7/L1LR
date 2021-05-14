@@ -1,3 +1,6 @@
+![GitHub](https://img.shields.io/github/license/Majeed7/L1LR?logo=license&style=flat-square)
+![GitHub Repo stars](https://img.shields.io/github/stars/Majeed7/L1LR?logo=stars&style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues-raw/Majeed7/L1LR?logo=open_issues&style=flat-square)
 
 # Description
 
