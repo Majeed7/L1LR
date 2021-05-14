@@ -1,13 +1,14 @@
+
 # Description
 
-This is a repository of the code for the ***An efficient projection neural network for $\ell_1$-regularized logistic regression*** paper.
+This is a repository of the code for the ***An efficient projection neural network for ℓ<sub>1</sub>-regularized logistic regression*** paper.
 
 ## Getting Started
 
 ### Dependencies
 
 * Python 3.6+
-* PyTorch 1.6
+* PyTorch 1.6+
 * sklearn 0.23
 * Matplotlib (for graphs and figures)
 
@@ -19,9 +20,9 @@ This is a repository of the code for the ***An efficient projection neural netwo
     
 ### Executing program
 
-* Run each file in form of *run_(dataset_name).py* to obtain corresponding results of the proposed method and sklearn LogisticRegression model
+* Run each file in form of `run_(dataset_name).py` to obtain corresponding results of the proposed method and sklearn LogisticRegression model
 
-* Run each file in form of *script_(figure's_name).py* to generate the paper's figures
+* Run each file in form of `script_(figure's_name).py` to generate the paper's figures
 
 * **Note:** Results that acquired from all methods available in .mat format in the [results folder](./results).
 
@@ -37,10 +38,19 @@ This is a repository of the code for the ***An efficient projection neural netwo
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
 
 ## Citation
-
+```
+@misc{mohammadi2021efficient,
+      title={An efficient projection neural network for $\ell_1$-regularized logistic regression}, 
+      author={Majid Mohammadi and Amir Ahooye Atashin and Damian A. Tamburri},
+      year={2021},
+      eprint={2105.05449},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
 
 ## Acknowledgments
 
