@@ -46,6 +46,7 @@ This is a repository of the code for the ***An efficient projection neural netwo
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
 
 ## Citation
+Please consider referencing the following research paper of this repository if you find it useful or relevant to your research:
 ```
 @misc{mohammadi2021efficient,
       title={An efficient projection neural network for $\ell_1$-regularized logistic regression}, 
