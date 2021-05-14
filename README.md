@@ -1,6 +1,8 @@
-![GitHub](https://img.shields.io/github/license/Majeed7/L1LR?logo=license&style=flat-square)
-![GitHub Repo stars](https://img.shields.io/github/stars/Majeed7/L1LR?logo=stars&style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues-raw/Majeed7/L1LR?logo=open_issues&style=flat-square)
+<p align="center">
+    <img alt="GitHub Repo license" src="https://img.shields.io/github/license/Majeed7/L1LR?logo=license&style=flat-square">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Majeed7/L1LR?logo=stars&style=flat-square">
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/Majeed7/L1LR?logo=open_issues&style=flat-square">
+</p>
 
 # Description
 
