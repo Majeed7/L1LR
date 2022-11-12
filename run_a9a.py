@@ -78,17 +78,30 @@ if __name__ == "__main__":
 
     #SKLearn Logistic Regression
     #https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
-    logreg = LogisticRegression(C=1.0, penalty='l1', tol=tolerance, max_iter=max_itr, solver='liblinear')
+    logreg_l1 = LogisticRegression(C=1.0, penalty='l1', tol=tolerance, max_iter=max_itr, solver='liblinear')
     start = timeit.default_timer()
-    logreg.fit(train_set_x, train_set_y.squeeze())
+    logreg_l1.fit(train_set_x, train_set_y.squeeze())
     stop = timeit.default_timer()
     time_lr_sklearn = stop - start
     print('Time (sklearn LR): ', time_lr_sklearn)  
-    y_pred = logreg.predict(test_set_x)
-    print ("accurency (sklearn LR): ", 100 - np.mean(abs(y_pred - test_set_y))*100)
-    print('Number of itr : ', logreg.n_iter_[0])
+    y_pred = logreg_l1.predict(test_set_x)
+    print ("accurency (sklearn LR-L1): ", 100 - np.mean(abs(y_pred - test_set_y))*100)
+
+
+    #SKLearn Logistic Regression
+    #https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
+    logreg_l2 = LogisticRegression(C=1.0, penalty='l2', tol=tolerance, max_iter=max_itr, solver='liblinear')
+    start = timeit.default_timer()
+    logreg_l2.fit(train_set_x, train_set_y.squeeze())
+    stop = timeit.default_timer()
+    time_lr_sklearn = stop - start
+    print('Time (sklearn LR): ', time_lr_sklearn)  
+    y_pred = logreg_l2.predict(test_set_x)
+    print ("accurency (sklearn LR-L2): ", 100 - np.mean(abs(y_pred - test_set_y))*100)
+
 
     # save results for draw ROC
-    y_prob = logreg.predict_proba(test_set_x)
+    y_prob_l1 = logreg_l1.predict_proba(test_set_x)
+    y_prob_l2 = logreg_l2.predict_proba(test_set_x)
     y_score = model.predict_proba(x_test).detach().numpy()
-    sio.savemat(f"./results/{dataset_name}_ours.mat", {'score_our': y_score, 'score_sk':y_prob[:, 1]})
+    sio.savemat(f"./results/{dataset_name}_ours.mat", {'score_our': y_score, 'score_sk_l1':y_prob_l1[:, 1], 'score_sk_l2':y_prob_l2[:, 1]})
