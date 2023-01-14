@@ -37,7 +37,7 @@ if __name__ == "__main__":
     # Construct our model by instantiating the class defined above.
     model = LogisticRegressionNet(in_dim, out_dim, y,lam=1.0,device=device)
 
-    learning_rate = 2e-1
+    learning_rate = 2.5e-1
     tolerance = 1e-6
     max_itr = 100
     # optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.0)
@@ -59,7 +59,6 @@ if __name__ == "__main__":
     stop = timeit.default_timer()
     time_our_method = stop - start
     print('Number of itr : ', t)
-    print('Time (our method): ', time_our_method)  
 
     # testing
     test_set_x, test_set_y = load_svmlight_file(test_path)
@@ -71,6 +70,7 @@ if __name__ == "__main__":
     y_test = torch.from_numpy(test_set_y).float().to(device).squeeze_()
     y_predict = model.predict(x_test)
     acc = 100 - torch.mean(abs(y_predict - y_test))*100
+    print('Time (our method): ', time_our_method)
     print ("accurency (our method): ", acc.item())
 
     #SKLearn Logistic Regression
@@ -80,7 +80,7 @@ if __name__ == "__main__":
     logreg_l1.fit(train_set_x, train_set_y.squeeze())
     stop = timeit.default_timer()
     time_lr_sklearn = stop - start
-    print('Time (sklearn LR): ', time_lr_sklearn)  
+    print('Time (sklearn LR-L1): ', time_lr_sklearn)
     y_pred = logreg_l1.predict(test_set_x)
     print ("accurency (sklearn LR-L1): ", 100 - np.mean(abs(y_pred - test_set_y))*100)
 
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     logreg_l2.fit(train_set_x, train_set_y.squeeze())
     stop = timeit.default_timer()
     time_lr_sklearn = stop - start
-    print('Time (sklearn LR): ', time_lr_sklearn)  
+    print('Time (sklearn LR-L2): ', time_lr_sklearn)  
     y_pred = logreg_l2.predict(test_set_x)
     print ("accurency (sklearn LR-L2): ", 100 - np.mean(abs(y_pred - test_set_y))*100)
 

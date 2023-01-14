@@ -36,11 +36,6 @@ This is a repository of the code for the ***An efficient projection neural netwo
 * Amir Atashin
 * Majid Mohammadi
 
-## Version History
-
-* 1.0
-    * Initial Release
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
@@ -48,13 +43,14 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ## Citation
 Please consider referencing the following research paper of this repository if you find it useful or relevant to your research:
 ```
-@misc{mohammadi2021efficient,
-      title={An efficient projection neural network for $\ell_1$-regularized logistic regression}, 
-      author={Majid Mohammadi and Amir Ahooye Atashin and Damian A. Tamburri},
-      year={2021},
-      eprint={2105.05449},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@article{MOHAMMADI2023,
+    title = {From ℓ1 subgradient to projection: A compact neural network for ℓ1-regularized logistic regression},
+    journal = {Neurocomputing},
+    year = {2023},
+    issn = {0925-2312},
+    doi = {https://doi.org/10.1016/j.neucom.2023.01.021},
+    url = {https://www.sciencedirect.com/science/article/pii/S0925231223000310},
+    author = {Majid Mohammadi and Amir Ahooye Atashin and Damian A. Tamburri},
 }
 ```
 
