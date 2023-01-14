@@ -6,7 +6,7 @@
 
 # Description
 
-This is a repository of the code for the ***An efficient projection neural network for ℓ<sub>1</sub>-regularized logistic regression*** paper.
+This is a repository of the code for the ***From ℓ1 subgradient to projection: A compact neural network for ℓ1-regularized logistic regression*** paper.
 
 ## Getting Started
 
